@@ -13,7 +13,7 @@ window.onload = function () {
 
 // Fetch weather using coordinates (for current location)
 function fetchWeatherByCoords(lat, lon) {
-    const apiKey = 'e529f0728053d94f9d8e3c566b5d8184'; // Replace with your OpenWeatherMap API Key
+    const apiKey = ''; // Replace with your OpenWeatherMap API Key
     const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     fetch(weatherAPI)
@@ -50,7 +50,7 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
 
 // Fetch weather using the city name (for searched locations)
 function fetchWeatherByLocation(location) {
-    const apiKey = 'e529f0728053d94f9d8e3c566b5d8184'; // Replace with your OpenWeatherMap API Key
+    const apiKey = ''; // Replace with your OpenWeatherMap API Key
     const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${apiKey}`;
 
     fetch(weatherAPI)
@@ -84,7 +84,7 @@ async function getCurrentLocationWeather() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(async (position) => {
             const { latitude, longitude } = position.coords;
-            const apiKey = 'e529f0728053d94f9d8e3c566b5d8184'; // Replace with your OpenWeatherMap API Key
+            const apiKey = ''; // Replace with your OpenWeatherMap API Key
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`);
             if (!response.ok) {
                 console.error('Error fetching weather data:', response.statusText);
@@ -141,7 +141,7 @@ hourlyWeatherContainer.appendChild(hourElement);
 
 // Function to fetch weather data based on coordinates (including hourly forecast)
 function fetchWeatherByCoords(lat, lon) {
-const apiKey = 'e529f0728053d94f9d8e3c566b5d8184';  // Replace with your OpenWeatherMap API Key
+const apiKey = '';  // Replace with your OpenWeatherMap API Key
 const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
 fetch(weatherAPI)
@@ -173,7 +173,7 @@ fetch(weatherAPI)
 
 // Function to fetch weather data based on city name (for searched locations)
 function fetchWeatherByLocation(location) {
-const apiKey = 'e529f0728053d94f9d8e3c566b5d8184';  // Replace with your OpenWeatherMap API Key
+const apiKey = '';  // Replace with your OpenWeatherMap API Key
 const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${apiKey}`;
 
 fetch(weatherAPI)
@@ -237,7 +237,7 @@ function updateFiveDayForecast(data) {
 
 // Updated fetchWeatherByCoords function to include 5-day forecast
 function fetchWeatherByCoords(lat, lon) {
-    const apiKey = 'e529f0728053d94f9d8e3c566b5d8184';  // Replace with your OpenWeatherMap API Key
+    const apiKey = '';  // Replace with your OpenWeatherMap API Key
     const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
     fetch(weatherAPI)
@@ -272,7 +272,7 @@ function fetchWeatherByCoords(lat, lon) {
 
 // Updated fetchWeatherByLocation function to include 5-day forecast
 function fetchWeatherByLocation(location) {
-    const apiKey = 'e529f0728053d94f9d8e3c566b5d8184';  // Replace with your OpenWeatherMap API Key
+    const apiKey = '';  // Replace with your OpenWeatherMap API Key
     const weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=metric&appid=${apiKey}`;
 
     fetch(weatherAPI)
