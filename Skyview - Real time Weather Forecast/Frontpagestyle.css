@@ -1,0 +1,162 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    
+}
+
+/* Loading screen styling */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Black background for loading screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loading-gif {
+    width: 250px; /* Adjust the size of your loading GIF */
+}
+
+
+    
+/* General styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3a3d57;
+    padding: 10px 20px;
+    color: white;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top of the page */
+    left: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+    z-index: 1000; /* Ensure it's on top of other content */
+    box-sizing: border-box;
+    height:9%;
+}
+
+
+.skyview-icon {
+    font-size: 2rem; 
+    font-family:monospace;
+}
+
+/* Link styling */
+.navbar-links {
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    position: relative; /* Position for the underline effect */
+    padding: 5px; /* Padding for better click area */
+}
+
+.nav-link:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+/* Active link indicator */
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Position the line below the text */
+    height: 3px; /* Height of the underline */
+    background-color: #fff; /* Color of the underline */
+}
+
+/* To avoid content being hidden behind the fixed navbar */
+body {
+    padding-top: 60px; /* Add padding to account for navbar height */
+}
+
+
+/* Main content styling */
+#main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-image: url('sky.gif'); /* GIF background for main content */
+    background-size: cover;
+    background-position: center;
+    position: relative; /* Position relative for absolute children */
+    text-align: center;
+}
+
+/* First animated title styling */
+#animated-title {
+    position: absolute; /* Fix the position */
+    top: 20%; /* Position from the top */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the title */
+    font-size: 4rem;
+    font-weight: bold;
+    color: white; /* White text for visibility */
+    margin-bottom: 20px; /* Space between titles */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+#button-container {
+    display: flex; /* Flexbox to align buttons side by side */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 30px; /* Space between the buttons and the animated text */
+    position: absolute; /* Fix the position */
+    top: 55%; /* Position from the top */
+    left: 48.8%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the buttons */
+}
+
+/* Button styling */
+.custom-btn {
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    color: white;
+    background-color: #44486f; /* Button background color */
+    border: none;
+    cursor: pointer;
+    margin: 0 10px; /* Space between the buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth background color change */
+    width: 10rem;
+}
+
+.custom-btn:hover {
+    background-color: #5a5f8f; /* Darker shade on hover */
+}
+
+.custom-btn:focus {
+    outline: none;
+}
+h3{
+    color: white;
+    margin-bottom: 14rem;
+    font-size:1.6rem ;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+    font-family:'Courier New', Courier, monospace;
+
+    
+};
+
+
