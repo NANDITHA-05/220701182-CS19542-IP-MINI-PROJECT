@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(168, 187, 191);
+    display: flex;
+    flex-direction: column; /* Allow flexbox to stack sections vertically */
+    height: auto; /* Change from 100vh to auto */
+    overflow: auto; /* Allow scrolling */
+}
+
+.navbar {
+    width: 300px; /* Increased width for the navigation bar */
+    background-color: rgb(184, 210, 231);
+    padding: 20px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 91.4vh; /* Full height of the screen */
+    position: relative;
+    margin-top: 4rem ;
+}
+
+/* List items for the navigation links */
+.navbar ul {
+    list-style-type: none;
+    margin-top: 2.4rem;
+    width: 116%;
+}
+
+.navbar ul li {
+    margin-bottom: 1%;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    background-color: #125d7b;
+    border-radius: 0px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make links full width */
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+/* Style for the search bar */
+.search-bar {
+    width: 112%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 80%;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #125d7b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+/* Weather display container */
+.weather-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.weather-display h1 {
+    font-size: 24px;
+    margin-bottom: 3rem;
+}
+
+.weather-display h2 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.weather-display h3,
+.weather-display h4 {
+    margin: 0;
+}
+
+.weather-display h4 {
+    margin-top: 3rem; /* Increase gap between temperature and date/time */
+}
+
+/* Adjust weather icon size */
+#weather-icon {
+    width: 12rem; /* Adjust the width to make it larger */
+    height: 12rem; /* Adjust the height for proportion */
+    margin-bottom: 1.5rem; /* Add space below the weather icon */
+    margin-right: 1rem;
+}
+
+/* Adjust temperature styles */
+#temperature {
+    font-size: 23px; /* Larger size for temperature */
+    margin-bottom: 1rem; /* Adjust gap between temperature and date/time */
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
+
+/* Adjust location styles */
+#location {
+    margin-top: 2rem; /* Push location slightly down */
+    font-size: 27px; /* Adjust the font size of the location */
+    margin-right: 1rem;
+}
+
+/* Date and time */
+#datetime {
+    font-size: 20px;
+    margin-top: 1rem; /* Add more space above date/time */
+    margin-right: 1rem;
+}
+
+/* Adjust weather status alignment */
+#weather-status {
+    font-size: 24px; /* Adjust size of the weather status text */
+    margin-top: -3rem; /* Add space above the weather status */
+    margin-bottom: 1rem; /* Add space below the weather status */
+    text-align: center; /* Ensure the text is centered */
+    margin-right: 1rem;
+}
+
+.hourly-weather {
+    background-color: #2c3e50; /* Box background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: -40rem; /* Margin at the top */
+    margin-left: 20rem; /* Center horizontally */
+    margin-right: 1rem; /* Center horizontally */
+    width: 78%; /* Adjust width to fit the screen */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    height: fit-content;
+}
+
+.hourly-forecast {
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 10px; /* Space between hourly items */
+    padding-bottom: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.hour {
+    background-color: #aac6e1; /* Individual hour item background */
+    padding: 10px 5px; /* Adjusted padding for better layout */
+    border-radius: 5px; /* Rounded corners for hour items */
+    text-align: center; /* Center text inside the hour item */
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 120px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: space-between; /* Add space between elements */
+    height: 200px; /* Set a consistent height for each hour block */
+}
+
+.hour img {
+    display: block; /* Ensures images are treated as block elements */
+    margin: 0 auto; /* Center the image horizontally */
+    width: 100px; /* Set fixed width for consistent icon size */
+    height: 100px; /* Set fixed height for consistent icon size */
+}
+
+.hour span,
+.hour p {
+    margin: 5px 0; /* Add margin around text elements */
+    font-size: 15px; /* Adjust font size */
+    color: black;
+}
+
+.head {
+    position: fixed; /* Fixes the header at the top */
+    top: 0; /* Aligns it to the top of the viewport */
+    left: 16.9rem; /* Aligns it to the left edge */
+    width: 100%; /* Makes the header span the full width */
+    background-color: #2c3e50; /* Set a background color */
+    color: white; /* Set text color for contrast */
+    padding: 20px; /* Add padding to create space inside the box */
+    text-align: left; /* Center the content horizontally */
+    z-index: 1000; /* Ensures the header stays on top of other elements */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.five-day-forecast {
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 10px; /* Space between hourly items */
+    padding-bottom: 10px;
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.daily-weather {
+    background-color: #2c3e50; /* Box background color */
+    color: #fff; /* Text color */
+    padding: 20px; /* Padding inside the box */
+    border-radius: 10px; /* Rounded corners */
+    margin-top: -19rem; /* Margin at the top */
+    margin-left: 20rem; /* Center horizontally */
+    margin-right: 1rem; /* Center horizontally */
+    width: 45%; /* Adjust width to fit the screen */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    height: fit-content;
+}
+
+.day {
+    background-color: #aac6e1; /* Individual hour item background */
+    padding: 10px 5px; /* Adjusted padding for better layout */
+    border-radius: 5px; /* Rounded corners for hour items */
+    text-align: center; /* Center text inside the hour item */
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 120px;
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center content horizontally */
+    justify-content: space-between; /* Add space between elements */
+    height: 220px; /* Set a consistent height for each hour block */
+}
+
+.day img {
+    display: block; /* Ensures images are treated as block elements */
+    margin: 0 auto; /* Center the image horizontally */
+    width: 100px; /* Set fixed width for consistent icon size */
+    height: 100px; /* Set fixed height for consistent icon size */
+}
+
+.day span,
+.day p {
+    margin: 5px 0; /* Add margin around text elements */
+    font-size: 15px; /* Adjust font size */
+    color: black;
+}
+.navbar1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    color: white;
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align to the top of the page */
+    left: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+    z-index: 1000; /* Ensure it's on top of other content */
+    height: 9%;
+}
+
+.hello {
+    font-size: 2rem; 
+    font-family: monospace;
+    
+}
+.navbar-links {
+    display: flex;
+    gap: 20px; /* Space between links */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    position: relative; /* Position for the underline effect */
+    padding: 5px; /* Padding for better click area */
+}
+
+.nav-link:hover {
+    color: #ccc; /* Change color on hover */
+}
+
+/* Active link indicator */
+.nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px; /* Position the line below the text */
+    height: 3px; /* Height of the underline */
+    background-color: #fff; /* Color of the underline */
+}
+
+
+
+
+
+/* General container for recommendations */
+.recommendation-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #f0f8ff; /* Light blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heading for recommendations */
+.recommendation-container h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Text for recommendations */
+.recommendation-container p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* Image for recommendations */
+.recommendation-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Image hover effect */
+.recommendation-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
